@@ -78,4 +78,4 @@ than a model.
       end
     end
   end
-ruby```
+```
