@@ -1,9 +1,9 @@
 module Ohm
-  class Filter
+  class Scope
     VERSION = '0.1.0'.freeze
 
-    def initialize(model, scope)
-      @model, @scope = model, scope
+    def initialize(model, dict)
+      @model, @dict = model, dict
     end
 
     def create(**attributes)
@@ -11,7 +11,7 @@ module Ohm
     end
 
     def build(klass = model, **attributes)
-      klass.new(filtered(attributes))
+      klass.new(scoped(attributes))
     end
 
     def [](id)
@@ -41,15 +41,15 @@ module Ohm
     end
 
     def find(attributes)
-      model.find(filtered(attributes))
+      model.find(scoped(attributes))
     end
 
     protected
 
-    attr_reader :model, :scope
+    attr_reader :model, :dict
 
-    def filtered(attributes = {})
-      attributes.merge(scope)
+    def scoped(attributes = {})
+      attributes.merge(dict)
     end
   end
 end

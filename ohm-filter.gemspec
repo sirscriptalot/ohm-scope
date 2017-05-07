@@ -1,12 +1,12 @@
-require './lib/ohm/filter'
+require './lib/ohm/scope'
 
 Gem::Specification.new do |s|
-  s.name     = 'ohm-filter'
-  s.summary  = 'Ohm::Filter'
-  s.version  = Ohm::Filter::VERSION
+  s.name     = 'ohm-scope'
+  s.summary  = 'Ohm::Scope'
+  s.version  = Ohm::Scope::VERSION
   s.authors  = ['Steve Weiss']
   s.email    = ['weissst@mail.gvsu.edu']
-  s.homepage = 'https://github.com/sirscriptalot/ohm-filter'
+  s.homepage = 'https://github.com/sirscriptalot/ohm-scope'
   s.license  = 'MIT'
   s.files    = `git ls-files`.split("\n")
 

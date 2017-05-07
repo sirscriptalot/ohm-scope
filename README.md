@@ -1,1 +1,1 @@
-# Ohm::Filter
+# Ohm::Scope

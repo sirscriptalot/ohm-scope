@@ -1,6 +1,6 @@
 require          'ostruct'
 require          'ohm'
-require_relative '../lib/ohm/filter'
+require_relative '../lib/ohm/scope'
 
 class User < Ohm::Model
   collection :posts, :Post
@@ -26,7 +26,7 @@ end
 setup do
   user = User.create
 
-  [Ohm::Filter.new(Post, user_id: user.id), user]
+  [Ohm::Scope.new(Post, user_id: user.id), user]
 end
 
 test '#create saves model with overridden attributes' do |posts, user|
